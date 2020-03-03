@@ -14,8 +14,8 @@ result:
 .text
 
 main:
-la a2, N
-la a3, M
+lw a2, N
+lw a3, M
 la a4, matrix
 call proc
 #выводим результат
@@ -25,8 +25,8 @@ addi a0, x0, 10
 ecall
 
 proc:
-lw t0, 0(a2) # количество строк
-lw t1, 0(a3) # количество столбцов
+mv t0, a2 # количество строк
+mv t1, a3 # количество столбцов
 
 addi t2, t2, 0 # индекс строки
 
